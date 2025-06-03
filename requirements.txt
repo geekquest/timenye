@@ -1,0 +1,5 @@
+django
+django-restframework
+django-knox
+django-payments
+structlog

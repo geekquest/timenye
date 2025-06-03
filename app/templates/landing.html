@@ -1,0 +1,66 @@
+{% extends 'layouts/base.html' %}
+{% load static %}
+{% block "content" %}
+
+<div class="hero-section"
+    style="height: 100vh; background-image: url('{% static 'img/pexels-rfstudio-3886242.jpg' %}');">
+    <h1>WELCOME TO TIMENYE</h1>
+    <h2>Schedule Games</h2>
+    <h2>Meet other Players</h2>
+    <h2>Meet other Teams</h2>
+</div>
+
+<div class="row mt-3">
+    <div class="col-md-6">
+        <h3>For YOU</h3>
+    </div>
+    <div class="col-md-6">
+        <div class="row mt-3">
+            <div class="col-md-12">
+                <div class="card news-card">
+                    <div class="card-header">
+                        <div class="card-title">Latest News</div>
+                    </div>
+                    <div class="card-body">
+
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-12">
+                <div class="card news-card">
+                    <div class="card-header">
+                        <div class="card-title">Latest Fixtures</div>
+                    </div>
+                    <div class="card-body">
+
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-12">
+                <div class="card news-card">
+                    <div class="card-header">
+                        <div class="card-title">Latest Player Stats</div>
+                    </div>
+                    <div class="card-body">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row mt-3">
+    <div class="col-sm-12">
+    <div class="card card-default p-3">
+        <div class="card-content text-center is-text2l">
+            <p>Signup now to stay up to date with latest Events, Teams and Player Stats</p>
+            <a href="/signup" class="btn btn-primary btn-lg">Signup</a>
+        </div>
+    </div>
+    </div>
+</div>
+
+<div class="adbanner"></div>
+
+{% endblock %}
