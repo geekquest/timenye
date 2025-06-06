@@ -1,0 +1,13 @@
+[project]
+name = "timenye"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "django>=5.2.2",
+    "django-payments>=3.0.1",
+    "django-restframework>=0.0.1",
+    "django-tailwind>=4.0.1",
+    "structlog>=25.4.0",
+]

@@ -1,5 +1,5 @@
 django
 django-restframework
-django-knox
 django-payments
+django-tailwind
 structlog
