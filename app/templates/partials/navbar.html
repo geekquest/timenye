@@ -1,43 +1,74 @@
+{% load static %}
 
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <div class="container container-fluid">
-      <a class="navbar-brand" href="/">Timenye</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-          <li class="nav-item">
-            <a  class="nav-link" href="/discover"><i class="ti ti-search"></i>For You</a>
-          </li>
-          <li class="nav-item">
-            <a  class="nav-link" href="/sport/football"><i class="ti ti-ball-football"></i>Football</a>
-          </li>
-          <li class="nav-item">
-            <a  class="nav-link" href="/sport/basketball"><i class="ti ti-ball-basketball"></i>Basketball</a>
-          </li>
-          <li class="nav-item">
-            <a  class="nav-link" href="/sport/netball"><i class="ti ti-ball-volleyball"></i>Netball</a>
-          </li>
-          <li class="nav-item">
-            <a  class="nav-link" href="/sport/volleyball"><i class="ti ti-ball-volleyball"></i>Volleyball</a>
-          </li>
-          <li class="nav-item">
-            <a  class="nav-link" href="/sport/netball"><i class="ti ti-ball-tennis"></i>Tennis</a>
-          </li>
-          <li class="nav-item">
-            <a  class="nav-link" href="/teams"><i class="ti ti-users"></i>Teams</a>
-          </li>
-          <li class="nav-item"><a class="nav-link" href="/sports/">Other Sports</a></li>
-        </ul>
-        <div class="navbar-right">
-          <ul class="navbar-nav mb-2 mb-lg-0">
-            <li class="nav-item"><a class="nav-link" href="/signup">Register</a></li>
-            <li class="nav-item"><a class="nav-link" href="/login">Sign In</a></li>
-          </ul>
-        </div>
+<!-- Alpine.js for simple toggle, or replace with your JS framework of choice -->
+<script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
+
+<nav class="bg-gray-900 text-white shadow">
+  <div class="max-w-7xl mx-auto px-4">
+    <div class="flex justify-between items-center h-16">
+      <!-- Logo -->
+      <a href="/" class="font-bold text-xl tracking-tight">Timenye</a>
+
+      <!-- Hamburger (mobile) -->
+      <div class="flex lg:hidden">
+        <button @click="open = !open" class="text-gray-400 hover:text-white focus:outline-none" aria-label="Toggle menu" x-data="{ open: false }" x-on:click.stop="open = !open">
+          <svg x-show="!open" xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+          <svg x-show="open" xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+          </svg>
+        </button>
+      </div>
+
+      <!-- Main Menu -->
+      <div class="hidden lg:flex lg:space-x-2 items-center flex-1 ml-10">
+        <a href="/discover" class="flex items-center px-3 py-2 rounded hover:bg-gray-800 hover:text-primary-400 transition">
+          <i class="ti ti-search mr-2"></i>For You
+        </a>
+        <a href="/sport/football" class="flex items-center px-3 py-2 rounded hover:bg-gray-800 hover:text-primary-400 transition">
+          <i class="ti ti-ball-football mr-2"></i>Football
+        </a>
+        <a href="/sport/basketball" class="flex items-center px-3 py-2 rounded hover:bg-gray-800 hover:text-primary-400 transition">
+          <i class="ti ti-ball-basketball mr-2"></i>Basketball
+        </a>
+        <a href="/sport/netball" class="flex items-center px-3 py-2 rounded hover:bg-gray-800 hover:text-primary-400 transition">
+          <i class="ti ti-ball-volleyball mr-2"></i>Netball
+        </a>
+        <a href="/sport/volleyball" class="flex items-center px-3 py-2 rounded hover:bg-gray-800 hover:text-primary-400 transition">
+          <i class="ti ti-ball-volleyball mr-2"></i>Volleyball
+        </a>
+        <a href="/sport/netball" class="flex items-center px-3 py-2 rounded hover:bg-gray-800 hover:text-primary-400 transition">
+          <i class="ti ti-ball-tennis mr-2"></i>Tennis
+        </a>
+        <a href="/teams" class="flex items-center px-3 py-2 rounded hover:bg-gray-800 hover:text-primary-400 transition">
+          <i class="ti ti-users mr-2"></i>Teams
+        </a>
+        <a href="/sports/" class="flex items-center px-3 py-2 rounded hover:bg-gray-800 hover:text-primary-400 transition">
+          Other Sports
+        </a>
+      </div>
+      <!-- Auth Links -->
+      <div class="hidden lg:flex items-center space-x-2">
+        <a href="/signup" class="px-4 py-2 rounded hover:bg-primary-600 hover:text-white border border-primary-600 text-primary-500 bg-white transition font-semibold">Register</a>
+        <a href="/login" class="px-4 py-2 rounded hover:bg-primary-600 hover:text-white border border-primary-600 text-primary-500 bg-white transition font-semibold">Sign In</a>
       </div>
     </div>
-  </nav>
-  
-  
+  </div>
+
+  <!-- Mobile Menu (Dropdown) -->
+  <div x-data="{ open: false }" x-show="open" class="lg:hidden px-4 pb-4 bg-gray-900 text-white" x-transition>
+    <a href="/discover" class="block px-4 py-2 rounded hover:bg-gray-800 hover:text-primary-400 transition"><i class="ti ti-search mr-2"></i>For You</a>
+    <a href="/sport/football" class="block px-4 py-2 rounded hover:bg-gray-800 hover:text-primary-400 transition"><i class="ti ti-ball-football mr-2"></i>Football</a>
+    <a href="/sport/basketball" class="block px-4 py-2 rounded hover:bg-gray-800 hover:text-primary-400 transition"><i class="ti ti-ball-basketball mr-2"></i>Basketball</a>
+    <a href="/sport/netball" class="block px-4 py-2 rounded hover:bg-gray-800 hover:text-primary-400 transition"><i class="ti ti-ball-volleyball mr-2"></i>Netball</a>
+    <a href="/sport/volleyball" class="block px-4 py-2 rounded hover:bg-gray-800 hover:text-primary-400 transition"><i class="ti ti-ball-volleyball mr-2"></i>Volleyball</a>
+    <a href="/sport/netball" class="block px-4 py-2 rounded hover:bg-gray-800 hover:text-primary-400 transition"><i class="ti ti-ball-tennis mr-2"></i>Tennis</a>
+    <a href="/teams" class="block px-4 py-2 rounded hover:bg-gray-800 hover:text-primary-400 transition"><i class="ti ti-users mr-2"></i>Teams</a>
+    <a href="/sports/" class="block px-4 py-2 rounded hover:bg-gray-800 hover:text-primary-400 transition">Other Sports</a>
+    <div class="border-t border-gray-700 mt-2 pt-2">
+      <a href="/signup" class="block px-4 py-2 rounded hover:bg-success-600 hover:text-black transition">Register</a>
+      <a href="/login" class="block px-4 py-2 rounded hover:bg-primary-600 hover:text-white transition">Sign In</a>
+    </div>
+  </div>
+</nav>
