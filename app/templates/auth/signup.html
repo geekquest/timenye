@@ -1,99 +1,227 @@
-{% extends '../layouts/base.html' %}
-{% load static %}
-{% block "content" %}
+{% extends '../layouts/base.html' %} {% load static %} {% block "content" %}
 
-<div class="auth signup">
-    <div class="row">
-        <div class="col-md-6">
-            <div class="card card-default">
-                <div class="card-body">
-                    <h1>Register as Player</h1>
-
-                    <form action="">
-
-                        <div class="field">
-                            <label for="" class="input-label">Firstname</label>
-                            <input type="text" name="" id="" class="form-control"></div>
-                        <div class="field">
-                            <label for="" class="input-label">Lastname</label>
-                            <input type="text" name="" id="" class="form-control"></div>
-                        <div class="field">
-                            <label for="" class="input-label">E-mail</label>
-                            <input type="text" name="" id="" class="form-control"></div>
-                        <div class="field">
-                            <label for="" class="input-label">Phone</label>
-                            <input type="text" name="" id="" class="form-control"></div>
-                        <div class="field">
-                            <label for="" class="input-label">Password</label>
-                            <input type="password" name="" id="" class="form-control"></div>
-                        <div class="field">
-                            <label for="" class="input-label">Confirm Password</label>
-                            <input type="password" name="" id="" class="form-control"></div>
-
-
-                        <div class="action-buttons mt-2">
-
-                            <button class="btn btn-success"><i class="ti ti-user"></i> Register Player Account</button>
-                        </div>
-
-                    </form>
-                </div>
-            </div>
-
-        </div>
-        <div class="col-md-6">
-            <div class="card card-default">
-                <div class="card-body">
-                    <h1>Register a Team</h1>
-
-                    <form action="">
-
-                        <div class="field">
-                            <label for="" class="input-label">Firstname</label>
-                            <input type="text" name="" id="" class="form-control"></div>
-                        <div class="field">
-                            <label for="" class="input-label">Lastname</label>
-                            <input type="text" name="" id="" class="form-control"></div>
-                        <div class="field">
-                            <label for="" class="input-label">E-mail</label>
-                            <input type="text" name="" id="" class="form-control"></div>
-                        <div class="field">
-                            <label for="" class="input-label">Phone</label>
-                            <input type="text" name="" id="" class="form-control"></div>
-                        <div class="field">
-                            <label for="" class="input-label">Password</label>
-                            <input type="password" name="" id="" class="form-control"></div>
-                        <div class="field">
-                            <label for="" class="input-label">Confirm Password</label>
-                            <input type="password" name="" id="" class="form-control"></div>
-
-                        <hr>
-                        <div class="field">
-                            <label for="" class="input-label">Team Name</label>
-                            <input type="text" name="" id="" class="form-control"></div>
-                        <div class="field">
-                            <label for="" class="input-label">Owner Name</label>
-                            <input type="text" name="" id="" class="form-control"></div>
-                        <div class="field">
-                            <label for="" class="input-label">Address</label>
-                            <input type="text" name="" id="" class="form-control"></div>
-                        <div class="field">
-                            <label for="" class="input-label">Sports Category</label>
-                            <select name="sport" id="sport" class="form-control select">
-                                <option value="">Please Select One Sports</option>
-                                <option value="football">Football</option>
-                                <option value="basketball">Basketball</option>
-                            </select>
-                        </div>
-
-                        <div class="action-buttons mt-2">
-                            <button class="btn btn-success"><i class="ti ti-users"></i> Register Team Account</button>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
+<div class="auth signup" style="margin-top: 20px">
+  <div class="row justify-content-center">
+    <div class="col-md-8 text-center">
+      <h1 class="mb-4">Sign Up Now</h1>
     </div>
-    
+    <div class="row justify-content-center">
+      <div class="col-md-8">
+        <!-- Nav Tabs -->
+        <ul class="nav nav-tabs mb-3" id="registrationTabs" role="tablist">
+          <li class="nav-item" role="presentation">
+            <button
+              class="nav-link active"
+              id="player-tab"
+              data-bs-toggle="tab"
+              data-bs-target="#player"
+              type="button"
+              role="tab"
+              aria-controls="player"
+              aria-selected="true"
+            >
+              Register as Player
+            </button>
+          </li>
+          <li class="nav-item" role="presentation">
+            <button
+              class="nav-link"
+              id="team-tab"
+              data-bs-toggle="tab"
+              data-bs-target="#team"
+              type="button"
+              role="tab"
+              aria-controls="team"
+              aria-selected="false"
+            >
+              Register a Team
+            </button>
+          </li>
+        </ul>
+
+        <!-- Tab Panes -->
+        <div class="tab-content" id="registrationTabsContent">
+          <!-- Player Registration Form -->
+          <div
+            class="tab-pane fade show active"
+            id="player"
+            role="tabpanel"
+            aria-labelledby="player-tab"
+          >
+            <div class="card card-default">
+              <div class="card-body">
+                <h1>Register as Player</h1>
+                <form action="" method="post">
+                  {% csrf_token %}
+                  <div class="row">
+                    <div class="mb-3 col-lg-6">
+                      <label class="input-label">Firstname</label>
+                      <input
+                        type="text"
+                        name="player_firstname"
+                        class="form-control"
+                      />
+                    </div>
+                    <div class="mb-3 col-lg-6">
+                      <label class="input-label">Lastname</label>
+                      <input
+                        type="text"
+                        name="player_lastname"
+                        class="form-control"
+                      />
+                    </div>
+                    <div class="mb-3 col-lg-6">
+                      <label class="input-label">E-mail</label>
+                      <input
+                        type="email"
+                        name="player_email"
+                        class="form-control"
+                      />
+                    </div>
+                    <div class="mb-3 col-lg-6">
+                      <label class="input-label">Phone</label>
+                      <input
+                        type="text"
+                        name="player_phone"
+                        class="form-control"
+                      />
+                    </div>
+                    <div class="mb-3 col-lg-6">
+                      <label class="input-label">Password</label>
+                      <input
+                        type="password"
+                        name="player_password"
+                        class="form-control"
+                      />
+                    </div>
+                    <div class="mb-3 col-lg-6">
+                      <label class="input-label">Confirm Password</label>
+                      <input
+                        type="password"
+                        name="player_confirm_password"
+                        class="form-control"
+                      />
+                    </div>
+                    <div class="action-buttons mt-2">
+                      <button class="btn btn-success">
+                        <i class="ti ti-user"></i> Register Player Account
+                      </button>
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+
+          <!-- Team Registration Form -->
+          <div
+            class="tab-pane fade"
+            id="team"
+            role="tabpanel"
+            aria-labelledby="team-tab"
+          >
+            <div class="card card-default">
+              <div class="card-body">
+                <h1>Register a Team</h1>
+                <form action="" method="post">
+                  {% csrf_token %}
+                  <div class="row">
+                    <div class="mb-3 col-lg-6">
+                      <label class="input-label">Firstname</label>
+                      <input
+                        type="text"
+                        name="team_firstname"
+                        class="form-control"
+                      />
+                    </div>
+                    <div class="mb-3 col-lg-6">
+                      <label class="input-label">Lastname</label>
+                      <input
+                        type="text"
+                        name="team_lastname"
+                        class="form-control"
+                      />
+                    </div>
+                    <div class="mb-3 col-lg-6">
+                      <label class="input-label">E-mail</label>
+                      <input
+                        type="email"
+                        name="team_email"
+                        class="form-control"
+                      />
+                    </div>
+                    <div class="mb-3 col-lg-6">
+                      <label class="input-label">Phone</label>
+                      <input
+                        type="text"
+                        name="team_phone"
+                        class="form-control"
+                      />
+                    </div>
+                    <div class="mb-3 col-lg-6">
+                      <label class="input-label">Password</label>
+                      <input
+                        type="password"
+                        name="team_password"
+                        class="form-control"
+                      />
+                    </div>
+                    <div class="mb-3 col-lg-6">
+                      <label class="input-label">Confirm Password</label>
+                      <input
+                        type="password"
+                        name="team_confirm_password"
+                        class="form-control"
+                      />
+                    </div>
+                    <hr />
+                    <div class="mb-3 col-lg-6">
+                      <label class="input-label">Team Name</label>
+                      <input
+                        type="text"
+                        name="team_name"
+                        class="form-control"
+                      />
+                    </div>
+                    <div class="mb-3 col-lg-6">
+                      <label class="input-label">Owner Name</label>
+                      <input
+                        type="text"
+                        name="owner_name"
+                        class="form-control"
+                      />
+                    </div>
+                    <div class="mb-3 col-lg-6">
+                      <label class="input-label">Address</label>
+                      <input type="text" name="address" class="form-control" />
+                    </div>
+                    <div class="mb-3 col-lg-6">
+                      <label class="input-label">Sports Category</label>
+                      <select
+                        name="sport"
+                        id="sport"
+                        class="form-control select"
+                      >
+                        <option value="">Please Select One Sports</option>
+                        <option value="football">Football</option>
+                        <option value="basketball">Basketball</option>
+                      </select>
+                    </div>
+                    <div class="action-buttons mt-2">
+                      <button class="btn btn-success">
+                        <i class="ti ti-users"></i> Register Team Account
+                      </button>
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- End Tab Panes -->
+      </div>
+    </div>
+  </div>
+
+  {% endblock %}
 </div>
-{% endblock %}
