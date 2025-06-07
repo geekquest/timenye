@@ -5,82 +5,81 @@
 
 <!-- Hero Section -->
 <section
-  class="position-relative d-flex align-items-center justify-content-center text-center"
-  style="
-    height: 100vh;
-    background: url('{% static 'img/pexels-rfstudio-3886242.jpg' %}') center/cover no-repeat;
-  "
+  class="relative flex items-center justify-center text-center h-screen"
+  style="background: url('{% static 'img/pexels-rfstudio-3886242.jpg' %}') center/cover no-repeat;"
 >
   <!-- Dark overlay -->
-  <div
-    class="position-absolute top-0 start-0 w-100 h-100"
-    style="background-color: rgba(0, 0, 0, 0.6);"
-  ></div>
+  <div class="absolute inset-0 bg-black bg-opacity-60"></div>
 
-  <div class="position-relative text-white px-3">
-    <h1 class="display-3 fw-bold mb-3">Welcome to Timenye</h1>
-    <p class="lead mb-4">
-      Schedule Games • Meet Other Players • Build Your Team
+  <div class="relative text-white px-4 z-10">
+    <h1 class="text-4xl md:text-6xl font-extrabold mb-4">Welcome to Timenye</h1>
+    <p class="text-lg md:text-2xl mb-6 font-light">
+      Schedule Games &bull; Meet Other Players &bull; Build Your Team
     </p>
-    <a href="/signup" class="btn btn-primary btn-lg shadow-sm">
+    <a href="/signup" class="inline-block px-8 py-3 bg-primary-600 hover:bg-primary-700 text-white text-lg font-semibold rounded shadow transition">
       Sign Up Now
     </a>
   </div>
 </section>
 
 <!-- “For You” & Cards Section -->
-<div class="container mt-5 pb-5">
-  <div class="row gx-4 gy-4">
+<div class="max-w-7xl mx-auto px-4 mt-12 pb-12">
+  <div class="flex flex-col lg:flex-row gap-8">
     <!-- Left Column: For YOU -->
-    <div class="col-lg-4">
-      <div class="h-100 d-flex flex-column justify-content-center p-4 bg-light rounded shadow-sm">
-        <h3 class="fw-semibold mb-3">Why Timenye?</h3>
-        <ul class="list-unstyled">
-          <li class="mb-2">
-            <i class="ti ti-check text-primary me-2"></i>
+    <div class="w-full lg:w-1/3">
+      <div class="h-full flex flex-col justify-center bg-white rounded-2xl shadow-md p-6">
+        <h3 class="text-2xl font-semibold mb-4">Why Timenye?</h3>
+        <ul class="space-y-3 text-gray-700">
+          <li class="flex items-center">
+            <span class="inline-block w-6 h-6 mr-2 text-primary-600">
+              <i class="ti ti-check"></i>
+            </span>
             Effortless Game Scheduling
           </li>
-          <li class="mb-2">
-            <i class="ti ti-users text-primary me-2"></i>
-            Connect with Players & Teams
+          <li class="flex items-center">
+            <span class="inline-block w-6 h-6 mr-2 text-primary-600">
+              <i class="ti ti-users"></i>
+            </span>
+            Connect with Players &amp; Teams
           </li>
-          <li class="mb-2">
-            <i class="ti ti-bar-chart text-primary me-2"></i>
+          <li class="flex items-center">
+            <span class="inline-block w-6 h-6 mr-2 text-primary-600">
+              <i class="ti ti-bar-chart"></i>
+            </span>
             Track Stats in Real Time
           </li>
         </ul>
-        <a href="/about" class="mt-auto btn btn-outline-primary">
+        <a href="/about" class="mt-8 inline-block px-6 py-2 border border-primary-600 text-primary-600 rounded font-medium hover:bg-primary-600 hover:text-white transition">
           Learn More
         </a>
       </div>
     </div>
 
     <!-- Right Column: Latest News / Fixtures / Player Stats -->
-    <div class="col-lg-8">
-      <div class="row gx-3 gy-3">
+    <div class="w-full lg:w-2/3 flex flex-col gap-6">
+      <div class="flex flex-col md:flex-row gap-6">
         <!-- News Card -->
-        <div class="col-md-6">
-          <div class="card h-100 shadow-sm">
-            <div class="card-header bg-primary text-white">
-              <h5 class="mb-0">Latest News</h5>
+        <div class="w-full md:w-1/2">
+          <div class="bg-white rounded-2xl shadow-md h-full flex flex-col">
+            <div class="bg-primary-600 text-white rounded-t-2xl px-5 py-3">
+              <h5 class="text-lg font-bold">Latest News</h5>
             </div>
-            <div class="card-body">
-              <!-- Replace with dynamic news loop -->
-              <ul class="list-unstyled mb-0">
-                <li class="mb-3">
-                  <h6 class="fw-semibold">League Updates</h6>
-                  <p class="text-muted small mb-0">
+            <div class="p-5 flex-1">
+              <ul class="space-y-5 text-gray-800">
+                <li>
+                  <h6 class="font-semibold">League Updates</h6>
+                  <p class="text-gray-500 text-sm">
                     Check out the newest schedule changes for the upcoming season.
                   </p>
                 </li>
-                <li class="mb-3">
-                  <h6 class="fw-semibold">Season Kickoff</h6>
-                  <p class="text-muted small mb-0">
+                <li>
+                  <h6 class="font-semibold">Season Kickoff</h6>
+                  <p class="text-gray-500 text-sm">
                     Join us for the virtual season kickoff on June 20th at 5pm.
                   </p>
                 </li>
                 <li>
-                  <a href="/news" class="text-primary small">View All News →</a>
+                  <a href="/news" class="text-primary-600 text-sm hover:underline">View All News →</a>
                 </li>
               </ul>
             </div>
@@ -88,76 +87,73 @@
         </div>
 
         <!-- Fixtures Card -->
-        <div class="col-md-6">
-          <div class="card h-100 shadow-sm">
-            <div class="card-header bg-success text-white">
-              <h5 class="mb-0">Upcoming Fixtures</h5>
+        <div class="w-full md:w-1/2">
+          <div class="bg-white rounded-2xl shadow-md h-full flex flex-col">
+            <div class="bg-green-600 text-white rounded-t-2xl px-5 py-3">
+              <h5 class="text-lg font-bold">Upcoming Fixtures</h5>
             </div>
-            <div class="card-body">
-              <!-- Replace with dynamic fixtures loop -->
-              <ul class="list-unstyled mb-0">
-                <li class="mb-3">
-                  <h6 class="fw-semibold">Team A vs Team B</h6>
-                  <p class="text-muted small mb-0">
+            <div class="p-5 flex-1">
+              <ul class="space-y-5 text-gray-800">
+                <li>
+                  <h6 class="font-semibold">Team A vs Team B</h6>
+                  <p class="text-gray-500 text-sm">
                     Sat, Jun 14 • 3:00 PM • Main Stadium
                   </p>
                 </li>
-                <li class="mb-3">
-                  <h6 class="fw-semibold">Team C vs Team D</h6>
-                  <p class="text-muted small mb-0">
+                <li>
+                  <h6 class="font-semibold">Team C vs Team D</h6>
+                  <p class="text-gray-500 text-sm">
                     Sun, Jun 15 • 1:00 PM • Community Field
                   </p>
                 </li>
                 <li>
-                  <a href="/fixtures" class="text-success small">View Full Schedule →</a>
+                  <a href="/fixtures" class="text-green-600 text-sm hover:underline">View Full Schedule →</a>
                 </li>
               </ul>
             </div>
           </div>
         </div>
+      </div>
 
-        <!-- Player Stats Card -->
-        <div class="col-md-12">
-          <div class="card h-100 shadow-sm">
-            <div class="card-header bg-info text-white">
-              <h5 class="mb-0">Top Player Stats</h5>
-            </div>
-            <div class="card-body">
-              <!-- Replace with dynamic stats loop -->
-              <table class="table table-striped mb-0">
-                <thead class="table-light">
-                  <tr>
-                    <th scope="col">Player</th>
-                    <th scope="col">Goals</th>
-                    <th scope="col">Assists</th>
-                    <th scope="col">Matches</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td class="fw-medium">Jane Doe</td>
-                    <td>12</td>
-                    <td>8</td>
-                    <td>14</td>
-                  </tr>
-                  <tr>
-                    <td class="fw-medium">John Smith</td>
-                    <td>10</td>
-                    <td>11</td>
-                    <td>15</td>
-                  </tr>
-                  <tr>
-                    <td class="fw-medium">Alex Kumwenda</td>
-                    <td>9</td>
-                    <td>7</td>
-                    <td>13</td>
-                  </tr>
-                </tbody>
-              </table>
-
-              <div class="mt-3 text-end">
-                <a href="/player-stats" class="text-info small">View All Stats →</a>
-              </div>
+      <!-- Player Stats Card -->
+      <div>
+        <div class="bg-white rounded-2xl shadow-md h-full flex flex-col">
+          <div class="bg-sky-600 text-white rounded-t-2xl px-5 py-3">
+            <h5 class="text-lg font-bold">Top Player Stats</h5>
+          </div>
+          <div class="p-5 flex-1 overflow-x-auto">
+            <table class="min-w-full divide-y divide-gray-200">
+              <thead class="bg-gray-50">
+                <tr>
+                  <th class="px-3 py-2 text-left text-xs font-semibold text-gray-600">Player</th>
+                  <th class="px-3 py-2 text-left text-xs font-semibold text-gray-600">Goals</th>
+                  <th class="px-3 py-2 text-left text-xs font-semibold text-gray-600">Assists</th>
+                  <th class="px-3 py-2 text-left text-xs font-semibold text-gray-600">Matches</th>
+                </tr>
+              </thead>
+              <tbody class="bg-white divide-y divide-gray-100">
+                <tr>
+                  <td class="font-medium px-3 py-2">Jane Doe</td>
+                  <td class="px-3 py-2">12</td>
+                  <td class="px-3 py-2">8</td>
+                  <td class="px-3 py-2">14</td>
+                </tr>
+                <tr>
+                  <td class="font-medium px-3 py-2">John Smith</td>
+                  <td class="px-3 py-2">10</td>
+                  <td class="px-3 py-2">11</td>
+                  <td class="px-3 py-2">15</td>
+                </tr>
+                <tr>
+                  <td class="font-medium px-3 py-2">Alex Kumwenda</td>
+                  <td class="px-3 py-2">9</td>
+                  <td class="px-3 py-2">7</td>
+                  <td class="px-3 py-2">13</td>
+                </tr>
+              </tbody>
+            </table>
+            <div class="mt-4 text-right">
+              <a href="/player-stats" class="text-sky-600 text-sm hover:underline">View All Stats →</a>
             </div>
           </div>
         </div>
@@ -166,27 +162,27 @@
   </div>
 
   <!-- Call-to-Action Banner -->
-  <div class="row mt-5">
-    <div class="col-12">
-      <div class="card shadow-sm text-center py-5 bg-secondary text-white">
-        <h4 class="mb-3">Stay in the Game</h4>
-        <p class="mb-4">
-          Sign up now to receive notifications about tournaments, new teams, and exclusive player tips.
-        </p>
-        <a href="/signup" class="btn btn-outline-light btn-lg">Join Today</a>
-      </div>
+  <div class="mt-12">
+    <div class="bg-secondary-700 text-white rounded-2xl shadow-md text-center py-10 px-4">
+      <h4 class="text-2xl font-bold mb-3">Stay in the Game</h4>
+      <p class="mb-5 text-lg font-light">
+        Sign up now to receive notifications about tournaments, new teams, and exclusive player tips.
+      </p>
+      <a href="/signup" class="inline-block px-8 py-3 border border-white text-white text-lg font-semibold rounded hover:bg-white hover:text-secondary-700 transition">
+        Join Today
+      </a>
     </div>
   </div>
 </div>
 
-<!-- Footer Ad Banner (You can adjust height or include an image) -->
-<section class="py-5 bg-light text-center">
-  <div class="container">
-    <h5 class="fw-medium mb-3">Sponsor Spotlight</h5>
+<!-- Footer Ad Banner -->
+<section class="py-10 bg-gray-50 text-center">
+  <div class="max-w-2xl mx-auto">
+    <h5 class="text-lg font-semibold mb-4">Sponsor Spotlight</h5>
     <img
       src="{% static 'img/ad-placeholder.jpg' %}"
       alt="Ad Banner"
-      class="img-fluid rounded shadow-sm"
+      class="mx-auto rounded shadow-md"
       style="max-height: 200px;"
     />
   </div>
