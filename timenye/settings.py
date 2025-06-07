@@ -77,8 +77,12 @@ WSGI_APPLICATION = 'timenye.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'timenye',          # Your database name
+        'USER': 'postgres',      # Your database user (e.g., 'postgres')
+        'PASSWORD': 'Lunar123#',   # The password you set (e.g., 'Lunar123#')
+        'HOST': 'localhost',     # Local server
+        'PORT': '5432',          # Default Postgres port
     }
 }
 
