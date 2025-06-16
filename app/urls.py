@@ -2,6 +2,7 @@ from django.urls import path
 from . import views
 
 # TODO add an app_name
+app_name = "timenye.core"
 urlpatterns = [
     # TODO add names to the urls
     path('', views.index),

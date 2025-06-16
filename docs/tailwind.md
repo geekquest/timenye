@@ -15,5 +15,7 @@ Steps for contributors:
 2. Run `python manage.py tailwind start` in your terminal.
 3. Keep this process running in a separate terminal window while developing to automatically rebuild Tailwind CSS assets.
 
+NB: If step 2 doesn't work, head over to settings.py search for `# NPM_BIN_PATH = r"path\to\nodejs\npm.cmd"` and comment it back on with its value set to the `nodejs\npm.cmd` path. and re run it, this should work now
+
 For more information, refer to the django-tailwind documentation: https://django-tailwind.readthedocs.io/
 """
