@@ -33,6 +33,8 @@ ALLOWED_HOSTS = []
 INSTALLED_APPS = [
     'app.apps.AppConfig',
     'payments',
+    'tailwind',
+    'theme',  # default app for Tailwind CSS
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -70,6 +72,7 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'timenye.wsgi.application'
+TAILWIND_APP_NAME = 'theme'
 
 
 # Database
@@ -136,3 +139,9 @@ PAYMENT_HOST = 'localhost:8000'
 # Whether to use TLS (HTTPS). If false, will use plain-text HTTP.
 # Defaults to ``not settings.DEBUG``.
 PAYMENT_USES_SSL = False
+
+# The path to the Node.js executable. This is used by the Tailwind CSS
+# Include it if your Node.js is installed but "tailwind install" can't find it.
+# Make sure to adjust the path according to your Node.js/npms installation.
+# Keep it a raw string to avoid issues with backslashes in Windows paths.
+NPM_BIN_PATH = r"C:\Program Files\nodejs\npm.cmd"
