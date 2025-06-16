@@ -19,16 +19,7 @@ from django.urls import path, include
 from app import views
 
 urlpatterns = [
+    path('', include('app.urls')),
     path('admin/', admin.site.urls),
-
-    # TODO: move the urls to the app
-    path('', views.index),
-    path('login/', views.login),
-    path('signup/', views.signup),
-    path('discover/', views.for_you),
-    path('for-you/', views.for_you),
-    path('sports/', views.sports),
-    path('sport/<sport_name>', views.sport_home),
-    path('teams/', views.teams),
     path('payments/', include('payments.urls')),
 ]
