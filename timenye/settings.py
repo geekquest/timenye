@@ -25,6 +25,11 @@ SECRET_KEY = 'django-insecure-c61x0#i!rl^+zru6cajg@m4ruf)2e9@^_7x=^(^#wr(xh$dbco
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
+TAILWIND_APP_NAME = 'theme'
+INTERNAL_IPS = [
+    "127.0.0.1",
+]
+
 ALLOWED_HOSTS = []
 
 
@@ -33,6 +38,8 @@ ALLOWED_HOSTS = []
 INSTALLED_APPS = [
     'app.apps.AppConfig',
     'payments',
+     "tailwind",
+    "theme", # This is the name of your Tailwind app
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -77,8 +84,12 @@ WSGI_APPLICATION = 'timenye.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'timenye',          # Your database name
+        'USER': 'postgres',      # Your database user (e.g., 'postgres')
+        'PASSWORD': 'Lunar123#',   # The password you set (e.g., 'Lunar123#')
+        'HOST': 'localhost',     # Local server
+        'PORT': '5432',          # Default Postgres port
     }
 }
 
@@ -118,6 +129,11 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
 STATIC_URL = 'static/'
+
+STATICFILES_DIRS = [
+    BASE_DIR / "theme" / "static",
+]
+
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
