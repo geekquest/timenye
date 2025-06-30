@@ -9,21 +9,24 @@ https://docs.djangoproject.com/en/4.2/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.2/ref/settings/
 """
-
+import os
 from pathlib import Path
-
+from dotenv import load_dotenv
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
+# Load .env
+load_dotenv(BASE_DIR / '.env')
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-c61x0#i!rl^+zru6cajg@m4ruf)2e9@^_7x=^(^#wr(xh$dbco'
-
+SECRET_KEY = os.getenv('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+
+DEBUG = os.getenv('DEBUG') == 'True'
+# DEBUG = True  # Set to False in production
 
 TAILWIND_APP_NAME = 'theme'
 INTERNAL_IPS = [
@@ -84,12 +87,12 @@ WSGI_APPLICATION = 'timenye.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'timenye',          # Your database name
-        'USER': 'postgres',      # Your database user (e.g., 'postgres')
-        'PASSWORD': 'Lunar123#',   # The password you set (e.g., 'Lunar123#')
-        'HOST': 'localhost',     # Local server
-        'PORT': '5432',          # Default Postgres port
+       'ENGINE': os.getenv('DB_ENGINE'),
+        'NAME': os.getenv('DB_NAME'),
+        'USER': os.getenv('DB_USER'),
+        'PASSWORD': os.getenv('DB_PASSWORD'),
+        'HOST': os.getenv('DB_HOST'),
+        'PORT': os.getenv('DB_PORT'),
     }
 }
 

@@ -4,3 +4,4 @@ django-payments
 django-tailwind
 structlog
 psycopg2-binary
+python-dotenv
