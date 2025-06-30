@@ -27,11 +27,15 @@ We will develop timenye as a Django application. The main reason for choosing Dj
 * Flutter 3.10+ for building the mobile app
 
 ## Installation Guide  
-> NOTE: The installation already presume that you have  installed python and django in your machine Windows,Mac,Linx
+> NOTE: The installation assumes that Python and Django are already set up on your machine, whether you’re using Windows, macOS, or Linux.
+
+
 ### Folk and Cron the Repository
+> NOTE: Forking the repository lets you work in your own copy, applying and testing as many changes as you like before you merge them back into the original project.
+
 1. Folk the Reposiroty then Cron the repository into your device:
    ```bash
-   git clone https://github.com/mHubmw/finalangathe.git](https://github.com/geekquest/timenye.git)
+   git clone https://github.com/mHubmw/finalangathe.git(https://github.com/geekquest/timenye.git)
    cd Timenye
 ### Create and Activate Virtual Environment on Windows
 2. Create a virtual environment to install all your depedencies for this project and activate it :
@@ -52,7 +56,7 @@ We will develop timenye as a Django application. The main reason for choosing Dj
 5. Download Postgress Database and install in your Machine  using this link  :
    https://www.postgresql.org/download/
 ### Update .env file 
-6. install project dependencies which are in requirements.txt :
+6. locate .env file and update the database credeentials with your own :
    ```bash
    'DB_ENGINE': 'django.db.backends.postgresql',
    'DB_NAME': '',          # Your database name
