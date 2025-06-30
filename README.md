@@ -66,12 +66,14 @@ We will develop timenye as a Django application. The main reason for choosing Dj
    'DB_PORT': '5432',  # Default Postgres port
 
 ### Migrate Database 
-7. Migrate our tables into our database  :
+7. Migrate our tables into our database:
+    > NOTE: Running this command sets up (or updates) your database tables so they match the Django models in the code. Think of it as “building the foundation” your app needs before it can store or read any data.
    ```bash
    python manage.py  migrate
 
- ### Migrate Database 
-8. Start our django  application  :
+### Migrate Database 
+8. Start our django  application :
+    > NOTE: This command launches Django’s built-in web server and makes your app available in your browser (by default at http://127.0.0.1:8000). It also watches your code for changes and reloads automatically so you can see updates instantly.
    ```bash
    python manage.py  runserver    
 
