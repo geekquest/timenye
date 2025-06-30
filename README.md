@@ -1,7 +1,7 @@
 ```diff
  # Timenye
 
- **📖 [Overview](README.md)  |  ⚙️ [Installation](INSTALLATION.md)**
+ 📖 [Overview](README.md)  |  ⚙️ [Installation](INSTALLATION.md)
 
 # Timenye
 
