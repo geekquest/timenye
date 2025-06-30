@@ -35,7 +35,7 @@ We will develop timenye as a Django application. The main reason for choosing Dj
 
 1. Folk the Reposiroty then Cron the repository into your device:
    ```bash
-   git clone https://github.com/mHubmw/finalangathe.git(https://github.com/geekquest/timenye.git)
+   git clone https://github.com/YourUsername/timenye.git
    cd Timenye
 ### Create and Activate Virtual Environment on Windows
 2. Create a virtual environment to install all your depedencies for this project and activate it :
