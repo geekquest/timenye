@@ -1,8 +1,3 @@
-```diff
- # Timenye
-
- 📖 [Overview](README.md)  |  ⚙️ [Installation](INSTALLATION.md)
-
 # Timenye
 
 This is a platform for organizing, recording, scheduling Social Sports events.
@@ -30,6 +25,51 @@ We will develop timenye as a Django application. The main reason for choosing Dj
 * SQLite for the database
 * Redis for cache
 * Flutter 3.10+ for building the mobile app
+
+## Installation Guide  
+> NOTE: The installation already presume that you have  installed python and django in your machine Windows,Mac,Linx
+### Folk and Cron the Repository
+1. Folk the Reposiroty then Cron the repository into your device:
+   ```bash
+   git clone https://github.com/mHubmw/finalangathe.git](https://github.com/geekquest/timenye.git)
+   cd Timenye
+### Create and Activate Virtual Environment on Windows
+2. Create a virtual environment to install all your depedencies for this project and activate it :
+   ```bash
+   python -m venv .venv
+   .venv\Scripts\activate.bat
+### Create and Activate Virtual Environment on Mac,Linux
+3. Create a virtual environment to install all your depedencies for this project and activate it :
+   ```bash
+   python3 -m venv .venv
+   source .venv/bin/activate
+
+### Install Project Dependencies
+4. install project dependencies which are in requirements.txt :
+   ```bash
+   pip install -r requirements.txt
+### Download and Configure Database
+5. Download Postgress Database and install in your Machine  using this link  :
+   https://www.postgresql.org/download/
+### Update .env file 
+6. install project dependencies which are in requirements.txt :
+   ```bash
+   'DB_ENGINE': 'django.db.backends.postgresql',
+   'DB_NAME': '',          # Your database name
+   'DB_USER': 'postgres',      # Your database user (e.g., 'postgres')
+   'DB_PASSWORD': '',   # The password you set (e.g., 'Lunar123#')
+   'DB_HOST': 'localhost',     # Local server
+   'DB_PORT': '5432',  # Default Postgres port
+
+### Migrate Database 
+7. Migrate our tables into our database  :
+   ```bash
+   python manage.py  migrate
+
+ ### Migrate Database 
+8. Start our django  application  :
+   ```bash
+   python manage.py  runserver    
 
 ## Design Notes
 
