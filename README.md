@@ -1,3 +1,8 @@
+```diff
+ # Timenye
+
+ **📖 [Overview](README.md)  |  ⚙️ [Installation](INSTALLATION.md)**
+
 # Timenye
 
 This is a platform for organizing, recording, scheduling Social Sports events.
