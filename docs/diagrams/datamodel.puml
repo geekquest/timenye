@@ -1,0 +1,19 @@
+@startuml 
+
+class User {}
+class Player {}
+class Team {}
+class TeamMember {}
+class Venue {}
+class ScheduledMatch {}
+class Sport {}
+
+class HomeTeam extends Team {}
+class AwayTeam extends Team {}
+
+Player <-- User 
+Team --- Player
+Team --- TeamMember
+ScheduledMatch --> HomeTeam
+ScheduledMatch --> AwayTeam
+@enduml 
