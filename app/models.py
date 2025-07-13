@@ -4,7 +4,7 @@ from django.utils.translation import gettext_lazy as _
 '''User model represents a user who will login to the platform'''
 class User(models.Model):
     display_name = models.CharField(max_length=140)
-    address = models.CharField(max_length=140)
+    address = models.CharField(max_length=140, blank=True)
     email = models.CharField(max_length=200)
     password = models.TextField()
 
