@@ -144,4 +144,4 @@ PAYMENT_USES_SSL = False
 # Include it if your Node.js is installed but "tailwind install" can't find it.
 # Make sure to adjust the path according to your Node.js/npms installation.
 # Keep it a raw string to avoid issues with backslashes in Windows paths.
-# NPM_BIN_PATH = r"C:\Program Files\nodejs\npm.cmd"
+# NPM_BIN_PATH = r"path\to\nodejs\npm.cmd"
