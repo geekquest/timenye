@@ -34,7 +34,6 @@ INSTALLED_APPS = [
     'app.apps.AppConfig',
     'payments',
     'tailwind',
-    'theme',  # default app for Tailwind CSS
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -72,7 +71,7 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'timenye.wsgi.application'
-TAILWIND_APP_NAME = 'theme'
+TAILWIND_APP_NAME = 'app'
 
 
 # Database
