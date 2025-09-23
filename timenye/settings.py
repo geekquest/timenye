@@ -36,10 +36,10 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
-    'app.apps.AppConfig',
+    'app',
     'payments',
-     "tailwind",
-    "theme", # This is the name of your Tailwind app
+    'tailwind',
+    'theme',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -47,6 +47,10 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 ]
+if DEBUG:
+    INSTALLED_APPS += [
+        # 'django_browser_reload',
+    ]
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -56,6 +60,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    # "django_browser_reload.middleware.BrowserReloadMiddleware",
 ]
 
 ROOT_URLCONF = 'timenye.urls'
@@ -152,3 +157,9 @@ PAYMENT_HOST = 'localhost:8000'
 # Whether to use TLS (HTTPS). If false, will use plain-text HTTP.
 # Defaults to ``not settings.DEBUG``.
 PAYMENT_USES_SSL = False
+
+# The path to the Node.js executable. This is used by the Tailwind CSS
+# Include it if your Node.js is installed but "tailwind install" can't find it.
+# Make sure to adjust the path according to your Node.js/npms installation.
+# Keep it a raw string to avoid issues with backslashes in Windows paths.
+# NPM_BIN_PATH = r"Path\to\nodejs\npm.cmd"
